@@ -20,31 +20,33 @@ export default function Search() {
 	}
 
 	return (
-		<form className='flex flex-col gap-2 sm:w-96 sm:items-end'>
-			<input
-				type='text'
-				placeholder='Insert the name of a Pokémon'
-				value={query}
-				onChange={e => {
-					setQuery(e.target.value)
-					setError(null)
-				}}
-				className='w-full grow rounded-md border-2 border-gray-300 p-2'
-			/>
-			<button
-				onClick={e => {
-					e.preventDefault()
-					fetchPokemon(query)
-					actions.setIsLoading(true)
-				}}
-				type='submit'
-				className='rounded-md bg-sky-500 py-2 px-4 text-white'
-			>
-				Search
-			</button>
+		<form className='flex flex-col gap-10 '>
+			<div className='flex gap-2'>
+				<input
+					type='text'
+					placeholder='Insert the name of a Pokémon'
+					value={query}
+					onChange={e => {
+						setQuery(e.target.value)
+						setError(null)
+					}}
+					className='w-full grow rounded-md border-2 border-gray-300 p-2'
+				/>
+				<button
+					onClick={e => {
+						e.preventDefault()
+						fetchPokemon(query)
+						actions.setIsLoading(true)
+					}}
+					type='submit'
+					className='rounded-md bg-sky-500 py-2 px-4 text-white'
+				>
+					Search
+				</button>
+			</div>
 			{error instanceof Error && (
-				<div>
-					<span className='text-red-500'>{error.message}</span>
+				<div className='flex flex-col'>
+					<div className='text-red-500'>{error.message}</div>
 					<button
 						onClick={() => {
 							setError(null)
