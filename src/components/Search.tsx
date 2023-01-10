@@ -26,6 +26,7 @@ export default function Search() {
 			<div className='flex gap-2'>
 				<input
 					type='text'
+					required
 					placeholder='Insert the name of a Pokémon'
 					value={query}
 					onChange={e => {
@@ -38,6 +39,7 @@ export default function Search() {
 				/>
 				<button
 					onClick={e => {
+						if (!query) return
 						e.preventDefault()
 						fetchPokemon(query)
 						actions.setIsLoading(true)

@@ -56,11 +56,9 @@ export default function Card() {
 
 				<div>
 					{pokemon.stats.map(stat => (
-						<dl className='grid grid-cols-2 '>
+						<dl className='grid grid-cols-2' key={stat.stat.name}>
 							<dt className='font-semibold capitalize'>{stat.stat.name}:</dt>
-							<dd className='p-0 text-right capitalize' key={stat.stat.name}>
-								{stat.base_stat}
-							</dd>
+							<dd className='p-0 text-right capitalize'>{stat.base_stat}</dd>
 						</dl>
 					))}
 				</div>
