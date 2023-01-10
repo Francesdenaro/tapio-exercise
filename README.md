@@ -1,10 +1,11 @@
-# Tapio exercise
+# Pokémon Tapio exercise
 
 ##### This project was built with:
 
 - React + Typescript
 - TailwindCSS
 - Vite
+- Little State Machine
 
 ### How to start this project
 

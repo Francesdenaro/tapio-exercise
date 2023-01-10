@@ -32,7 +32,9 @@ export default function Search() {
 						setQuery(e.target.value)
 						setError(null)
 					}}
-					className='w-full grow rounded-md border-2 border-gray-300 p-2'
+					className={`w-full grow rounded-md border-2 ${
+						error ? "border-red-500" : "border-gray-300"
+					} p-2`}
 				/>
 				<button
 					onClick={e => {

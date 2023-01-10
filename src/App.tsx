@@ -8,7 +8,10 @@ function App() {
 		<StateMachineProvider>
 			<div className='flex h-screen flex-col items-center gap-10'>
 				<Header />
-				<div className='flex w-4/5 flex-col items-stretch justify-center gap-4 px-4 sm:w-96 sm:flex-col-reverse sm:items-stretch'>
+				<h1 className='w-4/5 sm:w-96'>
+					Search for a Pokémon by name or using the National Pokédex number.
+				</h1>
+				<div className='flex w-4/5 flex-col items-stretch justify-center gap-4 sm:w-96 sm:items-stretch'>
 					<Search />
 					<Card />
 				</div>

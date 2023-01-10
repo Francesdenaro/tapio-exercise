@@ -7,14 +7,14 @@ export default function Card() {
 	const pokemon = state.pokemon as Pokemon
 	if (state.isLoading) {
 		return (
-			<div className='flex flex-col items-center justify-center rounded-xl bg-blue-50 py-12 '>
+			<div className='flex flex-col items-center justify-center rounded-xl bg-blue-50 py-12'>
 				<ClipLoader color='#3B82F6' />
 			</div>
 		)
 	}
 
 	return pokemon ? (
-		<div className='flex flex-col items-center justify-center rounded-xl bg-gray-50 shadow-lg '>
+		<div className='flex flex-col items-center justify-center rounded-xl bg-gray-50 shadow-lg'>
 			<img
 				className='aspect-square w-full bg-white '
 				src={
@@ -23,15 +23,15 @@ export default function Card() {
 				}
 				alt='Pokémon'
 			/>
-			<div className='flex flex-col gap-1 px-2 py-4'>
+			<div className='flex flex-col gap-1 p-5'>
 				<h3 className='text-3xl font-bold capitalize'>{pokemon?.name}</h3>
 
 				<div className='flex items-stretch gap-2'>
 					<h4 className='font-bold'>Abilities:</h4>
-					<div className='flex items-center justify-center gap-3 divide-x divide-solid divide-slate-500 '>
+					<div className='flex items-center justify-center gap-3 divide-x divide-solid divide-slate-500'>
 						{pokemon?.abilities.map(ability => (
 							<span
-								className='p-0 text-center capitalize last:px-2'
+								className='pl-2 text-center capitalize first:pl-0 '
 								key={ability.ability.name}
 							>
 								{ability.ability.name}
