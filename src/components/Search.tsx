@@ -9,7 +9,9 @@ export default function Search() {
 
 	async function fetchPokemon(query: string) {
 		try {
-			const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${query}`)
+			const res = await fetch(
+				`https://pokeapi.co/api/v2/pokemon/${query.toLowerCase()}`
+			)
 			const data = await res.json()
 			actions.setPokemon(data)
 			actions.setIsLoading(false)
